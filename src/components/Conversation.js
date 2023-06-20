@@ -4,7 +4,7 @@ import {BiUserCircle} from 'react-icons/bi'
 import {GrAttachment} from 'react-icons/gr'
 import {BsEmojiSmile,BsMicFill} from 'react-icons/bs'
 import '../App.css'
-const Conversation = (props,{socket, room, username})=>{
+const Conversation = ({socket, room, username})=>{
 
     const [currmessage, setMessage] = useState("")
 
@@ -21,7 +21,6 @@ const Conversation = (props,{socket, room, username})=>{
             input.value = ""
         }
     }
-
     const [message,setNewMessage] = useState("")
     let result = []
     result.push(message)
@@ -30,7 +29,6 @@ const Conversation = (props,{socket, room, username})=>{
             setNewMessage((test)=>{
                 return {test,...data}
             })
-            // console.log(data);
         })
     },[socket])
 
